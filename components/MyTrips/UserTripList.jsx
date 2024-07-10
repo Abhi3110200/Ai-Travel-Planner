@@ -73,7 +73,7 @@ export default function UserTripList({ userTrips }) {
           </View>
 
           <TouchableOpacity onPress={()=>router.push({pathname:'/trip-details', params:{
-            trip:userTrips[0]
+            trip:JSON.stringify(userTrips[0])
           }})}
             style={{
               marginTop: 10,

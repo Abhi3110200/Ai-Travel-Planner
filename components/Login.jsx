@@ -1,7 +1,8 @@
-import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
 import React from "react";
 import { Colors } from "@/constants/Colors";
 import { useRouter } from "expo-router";
+import { Platform } from "react-native";
 
 export default function Login() {
     const router=useRouter();
@@ -33,7 +34,7 @@ export default function Login() {
             fontFamily: "Outfit",
             textAlign:'center',
             color:Colors.GRAY,
-            marginTop:25
+            marginTop:Platform.OS==='ios'?10:20
         }}>Discover your next adventure effortlessly Personalized itineraries at your fingertips. Travel smarter with AI-driven insights.</Text>
 
         <TouchableOpacity style={styles.button}
@@ -58,12 +59,13 @@ const styles = StyleSheet.create({
     height: "100%",
     borderTopRightRadius:30,
     borderTopLeftRadius:30,
-    padding:25
+    padding:Platform.OS==='ios'? 20:25
+    
   },
   button:{
     padding:15,
     backgroundColor:Colors.primary,
     borderRadius:99,
-    marginTop:'25%'
+    marginTop:Platform.OS==='ios'?30:'25%'
   }
 });
