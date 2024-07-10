@@ -2,7 +2,7 @@ import { View, Text } from "react-native";
 import React from "react";
 import { Colors } from '@/constants/Colors';
 
-export default function OptionCard({ option, selectedTraveler }) {
+export default function OptionCard({ option, selectedOption }) {
   return (
     <View
       style={[{
@@ -13,7 +13,7 @@ export default function OptionCard({ option, selectedTraveler }) {
         alignItems:'center',
         backgroundColor:Colors.Light_gray,
         borderRadius:15
-      }, selectedTraveler?.id==option?.id&&{borderWidth:2}]}
+      }, selectedOption?.id==option?.id&&{borderWidth:2}]}
     >
       <View>
         <Text style={{
