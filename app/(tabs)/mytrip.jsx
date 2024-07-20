@@ -37,7 +37,7 @@ export default function MyTrip() {
       showsVerticalScrollIndicator={false}
       style={{
         padding: 25,
-        paddingTop: 55,
+        paddingTop: 50,
         backgroundColor: "#fff",
         height: "100%",
       }}

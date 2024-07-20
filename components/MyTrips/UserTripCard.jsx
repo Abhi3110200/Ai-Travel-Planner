@@ -4,20 +4,26 @@ import moment from "moment";
 import { Colors } from "../../constants/Colors";
 import { useRouter } from "expo-router";
 
-
 export default function UserTripCard({ trip }) {
+  
   const formatData = (data) => {
     if (data) {
-        return JSON.parse(data);
-      } else {
-        return {};
-      }
+      return JSON.parse(data);
+    } else {
+      return {};
+    }
   };
-  const router=useRouter();
+  const router = useRouter();
   return (
-    <TouchableOpacity onPress={()=>router.push({pathname:'/trip-details', params:{
-        trip:JSON.stringify(trip)
-      }})}
+    <TouchableOpacity
+      onPress={() =>
+        router.push({
+          pathname: "/trip-details",
+          params: {
+            trip: JSON.stringify(trip),
+          },
+        })
+      }
       style={{
         marginTop: 20,
         display: "flex",
@@ -34,7 +40,21 @@ export default function UserTripCard({ trip }) {
           borderRadius: 15,
         }}
       /> */}
-      <Image source={{uri:'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference='+formatData(trip.tripDate).locationInfo?.photoRef+'&key='+process.env.EXPO_PUBLIC_GOOGLE_MAP_KEY}}  style={{width: 100, height: 100, borderRadius: 15, objectFit:'cover'}} />
+      <Image
+        source={{
+          uri:
+            "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=" +
+            formatData(trip.tripDate).locationInfo?.photoRef +
+            "&key=" +
+            process.env.EXPO_PUBLIC_GOOGLE_MAP_KEY,
+        }}
+        style={{
+          width: 100,
+          height: 100,
+          borderRadius: 15,
+          objectFit: "cover",
+        }}
+      />
 
       <View>
         <Text
